@@ -8,7 +8,7 @@ Legend: ✅ live · 🟡 partial · 🟠 wired but pending DB migration · ⛔ s
 | # | Stage | Status | Where it lives | Gap |
 |---|-------|--------|----------------|-----|
 | 1 | Client intake | ✅ | [functions/api/intake.js](../functions/api/intake.js), [functions/_lib/cases.js](../functions/_lib/cases.js) (Turnstile + consent gate) | — |
-| 2 | AI / rules triage | ✅ | [functions/api/diagnostic.js](../functions/api/diagnostic.js), [functions/api/concierge.js](../functions/api/concierge.js) (gpt-4o-mini + tool call), [functions/_lib/automation.js](../functions/_lib/automation.js); public surface: [nexura-recovery-desk-montreal.html](../nexura-recovery-desk-montreal.html) + [assets/js/recovery-desk.js](../assets/js/recovery-desk.js) | — |
+| 2 | AI / rules triage | ✅ | [functions/api/diagnostic.js](../functions/api/diagnostic.js), [functions/api/concierge.js](../functions/api/concierge.js) (gpt-4.1-mini + tool call), [functions/_lib/automation.js](../functions/_lib/automation.js); public surface: [nexura-recovery-desk-montreal.html](../nexura-recovery-desk-montreal.html) + [assets/js/recovery-desk.js](../assets/js/recovery-desk.js) | — |
 | 3 | Risk score | ✅ | `automation.js` `riskLevel ∈ {standard, intermediate, elevated, critical}`; surfaced in Recovery Desk 3-bar meter and concierge `priorityIntake` | — |
 | 4 | Secure session | ✅ | `intake.js` issues case number + access code (HMAC, [functions/_lib/access-code.js](../functions/_lib/access-code.js)); RemoteFix sessions in [functions/_lib/remotefix.js](../functions/_lib/remotefix.js) | — |
 | 5 | Consent | ✅ | Intake form `consentement` boolean; RemoteFix `remoteFixConsentSchema` + `/api/remotefix/consent` | — |
